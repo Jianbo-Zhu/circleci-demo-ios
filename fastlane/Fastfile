@@ -32,4 +32,14 @@ platform :ios do
     deliver(force: true)
     # frameit
   end
+
+  lane :development do
+    match(type: "development")
+    gym(export_method: "development")
+    upload_to_testappio(
+      api_token: "5800dfba-2b98-4b5c-937c-fc2382f54b1a",
+      app_id: "zmyowzV25M",
+      release_notes: "For test only"
+    )
+  end
 end
